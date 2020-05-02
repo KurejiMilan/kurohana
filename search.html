@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>search</title>
+</head>
+<body>
+	<input type="text" name="text" placeholder="search" id="search">
+	<button onclick="myfunction()">Search</button><br>
+	<div id="result">
+		
+	</div>
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	function myfunction(){
+		var self= document.getElementById('search');
+		console.log(self.value);
+		var search = self.value;
+		$.ajax({
+			url: 'search.php',
+			method: 'POST',
+			data: {search : search},
+			success: function(result){
+				//document.getElementById("result").innerHTML = result;
+				$('#result').html(result);
+			}
+		})
+	}
+</script>
