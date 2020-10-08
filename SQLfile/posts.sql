@@ -8,7 +8,7 @@ link varchar(245) not null,
 textbody text not null,
 tag varchar(245) not null,
 dt date not null,
-type varchar(245) not null
+type varchar(245) not null,
 likes bigint not null,
 comments bigint not null,
 visibility varchar(245) not null
