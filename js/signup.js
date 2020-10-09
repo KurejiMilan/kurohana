@@ -6,11 +6,22 @@ var nameInput, nameError,
     termsCheckbox, checkboxError,
     signupBtn;
 
+// new line of code
+function signup_XMLHTTP_request(){
+  axios({
+    method: 'post',
+    url: '',
+    baseurl: 'http://127.0.0.1/kurohana/',
+    timeout: 1000,
+    data: {
+      firstName: 'Fred',
+      lastName: 'Flintstone'
+    }
+  }).then(function(resopnse){
 
-function signup_request(e){
-  alert("success");
-  e.preventDefault();
-  while(1);
+  }).catch(function(error){
+
+  });
 }
 
 function onButtonClick(e) {
