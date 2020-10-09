@@ -6,6 +6,13 @@ var nameInput, nameError,
     termsCheckbox, checkboxError,
     signupBtn;
 
+
+function signup_request(e){
+  alert("success");
+  e.preventDefault();
+  while(1);
+}
+
 function onButtonClick(e) {
     var name = nameInput.value
     var email = emailInput.value;
