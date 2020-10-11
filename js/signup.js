@@ -14,11 +14,14 @@ function signup_XMLHTTP_request(){
     baseurl: 'http://127.0.0.1/kurohana/',
     timeout: 1000,
     data: {
-      firstName: 'Fred',
-      lastName: 'Flintstone'
+      name: name,
+      email: email,
+      username: username,
+      password: password,
+      confirmPassword: confirmPassword
     }
-  }).then(function(resopnse){
-
+  }).then(function(reponse){
+      
   }).catch(function(error){
 
   });
