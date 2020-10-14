@@ -7,23 +7,24 @@ var nameInput, nameError,
     signupBtn;
 
 // new line of code
-function signup_XMLHTTP_request(){
+function signup_XMLHTTP_request(n ,e ,u ,p ,cp){
   axios({
     method: 'post',
-    url: '',
-    baseurl: 'http://127.0.0.1/kurohana/',
+    url: '/kurohana/phpdirectory/api/service/sign_Up.php',
+    baseurl: 'http://127.0.0.1',
     timeout: 1000,
+    headers: { 'Content-Type': 'application/json' },
     data: {
-      name: name,
-      email: email,
-      username: username,
-      password: password,
-      confirmPassword: confirmPassword
+      name: n,
+      email: e,
+      username: u,
+      password: p,
+      confirmPassword: cp
     }
   }).then(function(reponse){
-      
+    console.log(reponse);
   }).catch(function(error){
-
+    console.error(error);
   });
 }
 
@@ -70,7 +71,7 @@ function onButtonClick(e) {
         if (!termsCheckbox.checked) {
             toggleError(5, true);
         }
-    }
+    }else signup_XMLHTTP_request(name, email, username, password, confirmPassword);
 }
 
 function checkInitialError() {

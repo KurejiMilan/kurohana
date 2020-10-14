@@ -1,5 +1,5 @@
 <?php
-class user{
+class User{
   private $conn;
 
   public function __construct($database){
@@ -22,10 +22,10 @@ class user{
     try {
       $query = "SELECT * FROM users WHERE useremail=:email";
       $statement = $conn->prepare($query);
-      $statement->execute(['email'=>$email]]);
+      $statement->execute(array('email' => email));
       return $statement->rowCount();
     } catch (Exception $e) {
-      return "error";
+      return 503;
     }
   }
 
@@ -33,10 +33,10 @@ class user{
     try {
       $query = "SELECT * FROM users WHERE username=:uname";
       $statement = $conn->prepare($query);
-      $statement->execute(['uname'=>$uname]);
+      $statement->execute(array('uname' => uname));
       return $statement->rowCount();
     } catch (Exception $e) {
-      return "error";
+      return 503;
     }
   }
 }
