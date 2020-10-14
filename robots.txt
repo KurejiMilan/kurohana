@@ -1,0 +1,26 @@
+user-agent: Googlebot
+allow: /index.php
+
+user-agent: Bingbot
+allow: /index.php
+
+user-agent: Bingbot
+allow: /index.php
+
+user-agent: DuckDuckBot
+allow: /index.php
+
+user-agent: Baiduspider
+allow: /index.php
+
+user-agent: YandexBot
+allow: /index.php
+
+user-agent: facebot
+allow: /index.php
+
+user-agent: ia_archiver
+allow: /index.php
+
+user-agent: *
+disallow: /
