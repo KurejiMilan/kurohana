@@ -4,7 +4,7 @@ creative and original work, earn with viewer pledges.
 
 ## table of Content
 * [Technologies](#Technologies)
-* [Developers and Contributors](#Developers and Contributors)
+* [Developers and Contributors](#Developers-and-Contributors)
 
 ## Technologies
 Project is created with:
