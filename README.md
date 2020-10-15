@@ -4,6 +4,7 @@ creative and original work, earn with viewer pledges.
 
 ## table of Content
 * [Technologies](#Technologies)
+* [Developers and Contributors](#Developers and Contributors)
 
 ## Technologies
 Project is created with:
@@ -13,3 +14,9 @@ Project is created with:
 * html
 * jQuery framework
 * Axios javascript native library
+* LAMPP stack(linux os, apache server, MYsqli database, PHP server side language)
+
+## Developers and Contributors
+Here is the list of Developers and Contributors of this project:
+* Milan Rai
+* Samarthak Pakhrin
