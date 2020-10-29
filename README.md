@@ -22,6 +22,7 @@ Project is created with:
 Here is the list of Developers and Contributors of this project:
 * Milan Rai
 * Samarthak Pakhrin
+![Milan Rai](https://www.facebook.com/photo.php?fbid=2528599804031233&set=pb.100006437155689.-2207520000..&type=3)
 
 ## New Updates
 Read and write here for new Updates
