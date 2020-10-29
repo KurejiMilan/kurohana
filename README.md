@@ -34,5 +34,10 @@ for openssl to work.
 ```
 <?php
   openssl_encrypt($plaintext, $cipher, $key, $options=0, $iv, $tag);
+  openssl_decrypt($ciphertext, $cipher, $key, $options, $iv, $tag);
 ?>
 ```
+### Fix database table
+This script fixes some of the database table logical flaws and schema
+go to the link [http://localhost/kurohana/databaseSchemaFixScript.php]: http://localhost/kurohana/databaseSchemaFixScript.php
+and read the usage to fix the correct table or all table.
