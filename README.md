@@ -22,7 +22,7 @@ Project is created with:
 Here is the list of Developers and Contributors of this project:
 * Milan Rai
 * Samarthak Pakhrin
-![Milan Rai](https://scontent.fjkr1-1.fna.fbcdn.net/v/t1.0-9/97650504_3238879879669885_3359907105539620864_o.jpg?_nc_cat=110&ccb=2&_nc_sid=174925&_nc_ohc=_CnEtN_pEsUAX-TtpBm&_nc_ht=scontent.fjkr1-1.fna&oh=b79b5d92a965535dba24e5eb23ac71b6&oe=5FC158AA =250*250)
+<img src="https://scontent.fjkr1-1.fna.fbcdn.net/v/t1.0-9/97650504_3238879879669885_3359907105539620864_o.jpg?_nc_cat=110&ccb=2&_nc_sid=174925&_nc_ohc=_CnEtN_pEsUAX-TtpBm&_nc_ht=scontent.fjkr1-1.fna&oh=b79b5d92a965535dba24e5eb23ac71b6&oe=5FC158AA" alt="Milan Rai" width="250px" height="250px">
 ![Samarthak Pakhrin](https://scontent.fjkr1-1.fna.fbcdn.net/v/t1.0-9/41547355_1658573577587178_7728894649602932736_o.jpg?_nc_cat=100&ccb=2&_nc_sid=09cbfe&_nc_ohc=qWp3tCKOLbEAX8ouvOV&_nc_ht=scontent.fjkr1-1.fna&oh=3a681b9e2e27ed31d92b8504397c00e6&oe=5FC069ED)
 
 ## New Updates
