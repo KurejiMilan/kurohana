@@ -23,9 +23,9 @@ Here is the list of Developers and Contributors of this project:
 * Milan Rai
 * Samarthak Pakhrin
 
-<img src="https://scontent.fjkr1-1.fna.fbcdn.net/v/t1.0-9/97650504_3238879879669885_3359907105539620864_o.jpg?_nc_cat=110&ccb=2&_nc_sid=174925&_nc_ohc=_CnEtN_pEsUAX-TtpBm&_nc_ht=scontent.fjkr1-1.fna&oh=b79b5d92a965535dba24e5eb23ac71b6&oe=5FC158AA" alt="Milan Rai" width="250px" height="250px">
+<img src="https://scontent.fjkr1-1.fna.fbcdn.net/v/t1.0-9/97650504_3238879879669885_3359907105539620864_o.jpg?_nc_cat=110&ccb=2&_nc_sid=174925&_nc_ohc=_CnEtN_pEsUAX-TtpBm&_nc_ht=scontent.fjkr1-1.fna&oh=b79b5d92a965535dba24e5eb23ac71b6&oe=5FC158AA" alt="Milan Rai" width="150px" height="150px">
 
-<img src="https://scontent.fjkr1-1.fna.fbcdn.net/v/t1.0-9/41547355_1658573577587178_7728894649602932736_o.jpg?_nc_cat=100&ccb=2&_nc_sid=09cbfe&_nc_ohc=qWp3tCKOLbEAX8yTzRs&_nc_ht=scontent.fjkr1-1.fna&oh=3a9e219c2faac4bd291e0d3ec93533d6&oe=5FC069ED" alt="Samarthak Pakhrin" width="250px" height="250px">
+<img src="https://scontent.fjkr1-1.fna.fbcdn.net/v/t1.0-9/41547355_1658573577587178_7728894649602932736_o.jpg?_nc_cat=100&ccb=2&_nc_sid=09cbfe&_nc_ohc=qWp3tCKOLbEAX8yTzRs&_nc_ht=scontent.fjkr1-1.fna&oh=3a9e219c2faac4bd291e0d3ec93533d6&oe=5FC069ED" alt="Samarthak Pakhrin" width="150px" height="150px">
 
 ## New Updates
 Read and write here for new Updates
