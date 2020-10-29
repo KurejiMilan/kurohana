@@ -23,6 +23,7 @@ Here is the list of Developers and Contributors of this project:
 * Milan Rai
 * Samarthak Pakhrin
 ![Milan Rai](https://scontent.fjkr1-1.fna.fbcdn.net/v/t1.0-9/30729967_2528599807364566_7241857882361167872_n.jpg?_nc_cat=108&ccb=2&_nc_sid=174925&_nc_ohc=a_sL9vdcDaMAX-9P3la&_nc_ht=scontent.fjkr1-1.fna&oh=a96e4272f3106fbec07fe85db174cfe4&oe=5FBF176F)
+![Samarthak Pakhrin](https://scontent.fjkr1-1.fna.fbcdn.net/v/t1.0-9/41547355_1658573577587178_7728894649602932736_o.jpg?_nc_cat=100&ccb=2&_nc_sid=09cbfe&_nc_ohc=qWp3tCKOLbEAX8ouvOV&_nc_ht=scontent.fjkr1-1.fna&oh=3a681b9e2e27ed31d92b8504397c00e6&oe=5FC069ED)
 
 ## New Updates
 Read and write here for new Updates
