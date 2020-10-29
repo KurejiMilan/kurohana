@@ -39,5 +39,5 @@ for openssl to work.
 ```
 ### Fix database table
 This script fixes some of the database table logical flaws and schema
-go to the link [http://localhost/kurohana/databaseSchemaFixScript.php]: http://localhost/kurohana/databaseSchemaFixScript.php
+go to the link http://localhost/kurohana/databaseSchemaFixScript.php
 and read the usage to fix the correct table or all table.
