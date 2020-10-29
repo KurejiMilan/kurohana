@@ -28,8 +28,8 @@ Read and write here for new Updates
 * [OpenSSL](#OpenSSL)
 * [Fix database table](#Fix-database-table)
 
-###OpenSSL
-Uses OpenSSL to convert the plain text to cipher text. OpenSSL must be installed on the machine 
+### OpenSSL
+Uses OpenSSL to convert the plain text to cipher text. OpenSSL must be installed on the machine
 for openssl to work.
 ```
 <?php
