@@ -42,11 +42,11 @@ function userTable(){
     $query = mysqli_query($conn, "
       CREATE TABLE users(
       userid BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
-      name varchar(245) NOT NULL,
-      username varchar(245) NOT NULL,
-      useremail varchar(245) NOT NULL,
-      password varchar(245) NOT NULL,
-      sign_up_date date NOT NULL,
+      name varchar(50) NOT NULL,
+      username varchar(50) NOT NULL,
+      useremail varchar(100) NOT NULL,
+      password varchar(255) NOT NULL,
+      sign_up_date DATE NOT NULL,
       bio text NOT NULL,
       followers INT UNSIGNED NOT NULL,
       following INT UNSIGNED NOT NULL,
@@ -80,10 +80,10 @@ function userTable(){
         $data = '
                 CREATE TABLE user(
                   userid BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
-                  name varchar(245) NOT NULL,
-                  username varchar(245) NOT NULL,
-                  useremail varchar(245) NOT NULL,
-                  password varchar(245) NOT NULL,
+                  name varchar(50) NOT NULL,
+                  username varchar(50) NOT NULL,
+                  useremail varchar(100) NOT NULL,
+                  password varchar(255) NOT NULL,
                   sign_up_date date NOT NULL,
                   bio text NOT NULL,
                   followers INT UNSIGNED NOT NULL,
@@ -108,6 +108,7 @@ function verificationTable(){
       CREATE TABLE verification(
       userid BIGINT UNSIGNED NOT NULL,
       verification_code MEDIUMINT UNSIGNED NOT NULL,
+      time DATETIME NOT NULL,
       verified TINYINT NOT NULL DEFAULT 0,
       FOREIGN KEY (userid) REFERENCES users(userid)
       );
@@ -121,6 +122,7 @@ function verificationTable(){
               <tr>
                 <td>userid</td>
                 <td>verification_code</td>
+                <td>time</td>
                 <td>verified</td>
               </tr>
             </table>";
@@ -132,6 +134,7 @@ function verificationTable(){
           CREATE TABLE verification(
           userid BIGINT UNSIGNED NOT NULL,
           verification_code MEDIUMINT UNSIGNED NOT NULL,
+          time DATETIME NOT NULL,
           verified TINYINT NOT NULL DEFAULT 0,
           FOREIGN KEY (userid) REFERENCES users(userid)
         );";
