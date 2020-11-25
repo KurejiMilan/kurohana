@@ -6,6 +6,7 @@ $dbUsername="root";
 $dbPassword="";
 $dbName="Kakumei_studios";
 $conn=mysqli_connect($dbServername,$dbUsername,$dbPassword,$dbName) or die('couldn\'t connect to Server');
+global $conn;
 
 if(isset($_GET['u'])){
   $u = $_GET['u'];
@@ -17,7 +18,7 @@ if(isset($_GET['u'])){
   echo "<h1 style='color:green'>Database fix script</h1>";
   echo "<p style='font-size:18px; color:purple'>
           ====>use this script to fix the database schema. all the table are reconsidered and modified.<br>
-          ====>Usage: <code style='color:blue'>http://localhost:80/kurohana/databaseSchemaFixScript?u=all</code><br><br>
+          ====>Usage: <code style='color:blue'>http://localhost:80/kurohana/databaseSchemaFixScript?u=a</code><br><br>
           'u' argument values:<br>
             u=a: all tables.<br>
             u=user: fix user table.<br>
@@ -28,7 +29,7 @@ if(isset($_GET['u'])){
             example:<br>
             <code style='color:blue'>http://localhost:80/kurohana/databaseSchemaFixScript?u=user</code>             used to fix the user tables <br>
             <code style='color:blue'>http://localhost:80/kurohana/databaseSchemaFixScript?u=verificaton</code>     used to fix the verificaton table <br>
-            <code style='color:blue'>http://localhost:80/kurohana/databaseSchemaFixScript?u=all</code>              used to fix all the tables
+            <code style='color:blue'>http://localhost:80/kurohana/databaseSchemaFixScript?u=a</code>              used to fix all the tables
         </p>";
 }
 
@@ -37,10 +38,12 @@ if(isset($_GET['u'])){
 // function that fixes the db_table
 //for the user table
 function userTable(){
-  if(mysqli_query($conn, "DROP TABLE users;")){
+  global $conn;
+  $q = mysqli_query($conn, "DROP TABLE IF EXISTS users;");
+  if($q){
     echo "<p style='font-size:18px; color:purple'>====>dropped the users table.</p>";
     $query = mysqli_query($conn, "
-      CREATE TABLE users(
+      CREATE TABLE IF NOT EXISTS users(
       userid BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
       name varchar(50) NOT NULL,
       username varchar(50) NOT NULL,
@@ -94,14 +97,15 @@ function userTable(){
         fclose($file);
       }else echo "<p style='font-size:15px; color:red'>====>failed writing on file ./SQLfile/user.sql</p>";
     }else{
-      echo "<p style='font-size:15px; color:red'>====>failed creating user table</p>";
+      echo "<p style='font-size:15px; color:red'>====>failed creating users table</p>";
     }
-  }else echo "<p style='font-size:15px; color:red'>====>failed droping user table</p>";
+  }else echo "<p style='font-size:15px; color:red'>====>failed droping users table</p>";
 }
 
 
 //for verificationTable
 function verificationTable(){
+  global $conn;
   if(mysqli_query($conn, "DROP TABLE IF EXISTS verification;")){
     echo "<p style='font-size:18px; color:purple'>====>dropped the verification table.</p>";
     $query = mysqli_query($conn, "
@@ -119,11 +123,11 @@ function verificationTable(){
             ====>created table called verification.
             </p>";
       echo "<table style='font-size:18px; color:purple; border:1px solid black;'>
-              <tr>
-                <td>userid</td>
-                <td>verification_code</td>
-                <td>time</td>
-                <td>verified</td>
+              <tr style='color:purple; border:1px solid black;'>
+                <td style='color:purple; border:1px solid black;'>userid</td>
+                <td style='color:purple; border:1px solid black;'>verification_code</td>
+                <td style='color:purple; border:1px solid black;'>time</td>
+                <td style='color:purple; border:1px solid black;'>verified</td>
               </tr>
             </table>";
       echo "<p style='font-size:18px; color:green'>writing on file SQLfile/verification.sql.....................</p>";
