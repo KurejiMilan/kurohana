@@ -1,4 +1,6 @@
 <?php
+include_once '../../pwd_hash_dir/pwdhash.php';
+include_once '../../encryptor/opensslencryption.php';
 class User{
   private $conn;
 
@@ -33,11 +35,21 @@ class User{
     try {
       $query = "SELECT * FROM users WHERE username=:uname";
       $statement = $conn->prepare($query);
-      $statement->execute(array('uname' => uname));
+      $statement->execute(array(':uname' => uname));
       return $statement->rowCount();
     } catch (Exception $e) {
       return 503;
     }
+  }
+
+  public function createuser($un, $ue, $ps){
+    try {
+
+      $query = "INSERT INTO users(name, username, useremail, password, sign_up_date, bio) VALUES()";
+    } catch (Exception $e) {
+
+    }
+
   }
 }
 ?>

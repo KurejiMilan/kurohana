@@ -17,9 +17,9 @@ if(isset($_GET['u'])){
     verificationTable();
 }else{
   echo "<h1 style='color:green'>Database fix script</h1>";
-  echo "<p style='font-size:18px; color:purple'>
-          ====>use this script to fix the database schema. all the table are reconsidered and modified.<br>
-          ====>Usage: <code style='color:blue'>http://localhost:80/kurohana/databaseSchemaFixScript?u=a</code><br><br>
+  echo "<p style='font-size:15px;'>
+          =>$ use this script to fix the database schema. all the table are reconsidered and modified.<br>
+          =>$ Usage: <code style='color:blue'>http://localhost:80/kurohana/databaseSchemaFixScript?u=a</code><br><br>
           'u' argument values:<br>
             u=a: all tables.<br>
             u=user: fix user table.<br>
@@ -43,7 +43,7 @@ function userTable(){
   $filepath= getcwd();
   $q = mysqli_query($conn, "DROP TABLE IF EXISTS users;");
   if($q){
-    echo "<p style='font-size:18px; color:purple'>====>dropped the users table.</p>";
+    echo "<p style='font-size:15px;'><span style='color:green'>=>\$</span>dropped the users table.</p>";
     $query = mysqli_query($conn, "
       CREATE TABLE IF NOT EXISTS users(
       userid BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -53,34 +53,31 @@ function userTable(){
       password varchar(255) NOT NULL,
       sign_up_date DATE NOT NULL,
       bio text NOT NULL,
-      followers INT UNSIGNED NOT NULL,
-      following INT UNSIGNED NOT NULL,
+      followers INT UNSIGNED NOT NULL DEFAULT 0,
+      following INT UNSIGNED NOT NULL DEFAULT 0,
       active TINYINT NOT NULL DEFAULT 0
       );
     ");
     if($query){
-      echo "<p style='font-size:18px; color:green'>.....................</p>";
-      echo "<p style='font-size:18px; color:red'>
-            ====>created table called user.
+      echo "<p style='font-size:15px;'>
+            <span style='color:green'>=>\$</span>created table called users.
             </p>";
-      echo "<table style='font-size:18px; color:purple; border:1px solid black;'>
-              <tr>
-                <td>userid</td>
-                <td>name</td>
-                <td>username</td>
-                <td>useremail</td>
-                <td>password</td>
-                <td>sign_up_date</td>
-                <td>bio</td>
-                <td>followers</td>
-                <td>following</td>
-                <td>active</td>
-              </tr>
-            </table>";
+      echo "
+                userid<br>
+                name<br>
+                username<br>
+                useremail<br>
+                password<br>
+                sign_up_date<br>
+                bio<br>
+                followers<br>
+                following<br>
+                active<br>
+            ";
     }else{
-      echo "<p style='font-size:15px; color:red'>====>failed creating users table</p>";
+      echo "<p style='font-size:15px;'><span style='color:green'>=>\$</span>failed creating users table</p>";
     }
-  }else echo "<p style='font-size:15px; color:red'>====>failed droping users table</p>";
+  }else echo "<p style='font-size:15px;'><span style='color:green'>=>\$</span>failed droping users table</p>";
 }
 
 
@@ -89,7 +86,7 @@ function verificationTable(){
   global $conn;
   $filepath= getcwd();
   if(mysqli_query($conn, "DROP TABLE IF EXISTS verification;")){
-    echo "<p style='font-size:18px; color:purple'>====>dropped the verification table.</p>";
+    echo "<p style='font-size:15px;'><span style='color:green'>=>\$</span>dropped the verification table.</p>";
     $query = mysqli_query($conn, "
       CREATE TABLE verification(
       userid BIGINT UNSIGNED NOT NULL,
@@ -100,21 +97,18 @@ function verificationTable(){
       );
     ");
     if($query){
-      echo "<p style='font-size:18px; color:green'>.....................</p>";
-      echo "<p style='font-size:18px; color:red'>
-            ====>created table called verification.
+      echo "<p style='font-size:15px;'>
+            <span style='color:green'>=>\$</span>created table called verification.
             </p>";
-      echo "<table style='font-size:18px; color:purple; border:1px solid black;'>
-              <tr style='color:purple; border:1px solid black;'>
-                <td style='color:purple; border:1px solid black;'>userid</td>
-                <td style='color:purple; border:1px solid black;'>verification_code</td>
-                <td style='color:purple; border:1px solid black;'>time</td>
-                <td style='color:purple; border:1px solid black;'>verified</td>
-              </tr>
-            </table>";
+      echo "
+                userid</br>
+                verification_code</br>
+                time</br>
+                verified</br>
+            ";
     }else{
-      echo "<p style='font-size:15px; color:red'>====>failed creating user verification</p>";
+      echo "<p style='font-size:15px;'><span style='color:green'>=>\$</span>failed creating user verification</p>";
     }
-  }else echo "<p style='font-size:15px; color:red'>====>failed droping verificaton table</p>";
+  }else echo "<p style='font-size:15px;'><span style='color:green'>=>\$</span>failed droping verificaton table</p>";
 }
 ?>

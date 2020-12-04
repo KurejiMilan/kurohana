@@ -18,12 +18,12 @@
 CREATE TABLE IF NOT EXISTS users(
   userid BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
   name varchar(50) NOT NULL,
-  username varchar(50) NOT NULL,
-  useremail varchar(100) NOT NULL,
+  username varchar(50) UNIQUE NOT NULL,
+  useremail varchar(100) UNIQUE NOT NULL,
   password varchar(255) NOT NULL,
   sign_up_date DATE NOT NULL,
   bio text NOT NULL,
-  followers INT UNSIGNED NOT NULL,
-  following INT UNSIGNED NOT NULL,
+  followers INT UNSIGNED NOT NULL DEFAULT 0,
+  following INT UNSIGNED NOT NULL DEFAULT 0,
   active TINYINT NOT NULL DEFAULT 0
 );
