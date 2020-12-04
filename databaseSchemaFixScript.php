@@ -6,6 +6,7 @@ $dbUsername="root";
 $dbPassword="";
 $dbName="Kakumei_studios";
 $conn=mysqli_connect($dbServername,$dbUsername,$dbPassword,$dbName) or die('couldn\'t connect to Server');
+
 global $conn;
 
 if(isset($_GET['u'])){
@@ -39,6 +40,7 @@ if(isset($_GET['u'])){
 //for the user table
 function userTable(){
   global $conn;
+  $filepath= getcwd();
   $q = mysqli_query($conn, "DROP TABLE IF EXISTS users;");
   if($q){
     echo "<p style='font-size:18px; color:purple'>====>dropped the users table.</p>";
@@ -75,27 +77,6 @@ function userTable(){
                 <td>active</td>
               </tr>
             </table>";
-      echo "<p style='font-size:18px; color:green'>writing on file SQLfile/user.sql.....................</p>";
-
-      if(file_exists('./SQLfile/database.sql'))rename('./SQLfile/database.sql', './SQLfile/user.sql');
-      $file = fopen('./SQLfile/user.sql', "w");
-      if($file){
-        $data = '
-                CREATE TABLE user(
-                  userid BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
-                  name varchar(50) NOT NULL,
-                  username varchar(50) NOT NULL,
-                  useremail varchar(100) NOT NULL,
-                  password varchar(255) NOT NULL,
-                  sign_up_date date NOT NULL,
-                  bio text NOT NULL,
-                  followers INT UNSIGNED NOT NULL,
-                  following INT UNSIGNED NOT NULL,
-                  active TINYINT NOT NULL DEFAULT 0
-                );';
-        fwrite($file, $data);
-        fclose($file);
-      }else echo "<p style='font-size:15px; color:red'>====>failed writing on file ./SQLfile/user.sql</p>";
     }else{
       echo "<p style='font-size:15px; color:red'>====>failed creating users table</p>";
     }
@@ -106,6 +87,7 @@ function userTable(){
 //for verificationTable
 function verificationTable(){
   global $conn;
+  $filepath= getcwd();
   if(mysqli_query($conn, "DROP TABLE IF EXISTS verification;")){
     echo "<p style='font-size:18px; color:purple'>====>dropped the verification table.</p>";
     $query = mysqli_query($conn, "
@@ -130,21 +112,6 @@ function verificationTable(){
                 <td style='color:purple; border:1px solid black;'>verified</td>
               </tr>
             </table>";
-      echo "<p style='font-size:18px; color:green'>writing on file SQLfile/verification.sql.....................</p>";
-
-      $file = fopen('./SQLfile/verification.sql', "w");
-      if($file){
-        $data = "
-          CREATE TABLE verification(
-          userid BIGINT UNSIGNED NOT NULL,
-          verification_code MEDIUMINT UNSIGNED NOT NULL,
-          time DATETIME NOT NULL,
-          verified TINYINT NOT NULL DEFAULT 0,
-          FOREIGN KEY (userid) REFERENCES users(userid)
-        );";
-        fwrite($file, $data);
-        fclose($file);
-      }else echo "<p style='font-size:15px; color:red'>====>failed writing on file ./SQLfile/verificaton.sql</p>";
     }else{
       echo "<p style='font-size:15px; color:red'>====>failed creating user verification</p>";
     }
