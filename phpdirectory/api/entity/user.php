@@ -42,10 +42,16 @@ class User{
     }
   }
 
-  public function createuser($un, $ue, $ps){
+  public function createuser($n, $un, $ue, $ps){
     try {
-
-      $query = "INSERT INTO users(name, username, useremail, password, sign_up_date, bio) VALUES()";
+      Opensll::sslencrypt($ue);
+      Pwdhasser::hasher($ps);
+      $bio = "Hi, Im".$n ".";
+      $d = date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']);
+      $q = "INSERT INTO users(name, username, useremail, password, sign_up_date, bio) VALUES(:nm,:uname,:umail,:pwd,:sdt,:bio)";
+      $statement = $conn->prepare($q);
+      $statement->bindParam([':nm'=>$n, ':uname'=>$un, ':umail'=> Opensll::sslencrypt($ue),]);
+      $statement->execute();
     } catch (Exception $e) {
 
     }

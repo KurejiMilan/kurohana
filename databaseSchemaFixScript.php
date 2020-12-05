@@ -46,16 +46,16 @@ function userTable(){
     echo "<p style='font-size:15px;'><span style='color:green'>=>\$</span>dropped the users table.</p>";
     $query = mysqli_query($conn, "
       CREATE TABLE IF NOT EXISTS users(
-      userid BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
-      name varchar(50) NOT NULL,
-      username varchar(50) NOT NULL,
-      useremail varchar(100) NOT NULL,
-      password varchar(255) NOT NULL,
-      sign_up_date DATE NOT NULL,
-      bio text NOT NULL,
-      followers INT UNSIGNED NOT NULL DEFAULT 0,
-      following INT UNSIGNED NOT NULL DEFAULT 0,
-      active TINYINT NOT NULL DEFAULT 0
+        userid BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
+        name varchar(50) NOT NULL,
+        username varchar(50) UNIQUE NOT NULL,
+        useremail varchar(800) UNIQUE NOT NULL,
+        password varchar(1000) NOT NULL,
+        sign_up_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        bio varchar(1200) NOT NULL,
+        followers INT UNSIGNED NOT NULL DEFAULT 0,
+        following INT UNSIGNED NOT NULL DEFAULT 0,
+        active TINYINT NOT NULL DEFAULT 0
       );
     ");
     if($query){
